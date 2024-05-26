@@ -18,9 +18,7 @@ export default {
         'WengeBrown': 'hsl(30, 10%, 34%)',
         'DarkCharcoal': 'hsl(24, 5%, 18%)',
       },
-      screens: {
-        sm: '375px',
-      },
+
     },
   },
   plugins: [],
