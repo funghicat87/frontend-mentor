@@ -9,6 +9,7 @@ export default {
       fontFamily: {
         sans: ["Outfit", 'sans-serif'],
         serif: ["Young Serif", 'serif'],
+        karla:["Karla", 'sans-serif'],
       },
       colors: {
         'White':'hsl(0, 0%, 100%)',
@@ -20,6 +21,7 @@ export default {
       },
 
     },
+    
   },
   plugins: [],
 }

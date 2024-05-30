@@ -1,4 +1,4 @@
-import omeletteImage from '../assets/omelette.jpeg'; 
+import omeletteImage from '../assets//RecipePage/omelette.jpeg'; 
 import { preparation, ingredients, instructions, nutrition } from "../constants";
 
 const RecipePage = () => {
