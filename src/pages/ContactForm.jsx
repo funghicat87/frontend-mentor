@@ -1,5 +1,6 @@
 import React from 'react';
-import CheckboxImg from '../assets/ContactForm/icon-radio-selected.svg';
+import RadioImg from '../assets/ContactForm/icon-radio-selected.svg';
+import CheckboxImg from '../assets/ContactForm/icon-checkbox-check.svg';
 
 function ContactForm() {
   const Label = ({ children }) => (
@@ -9,14 +10,14 @@ function ContactForm() {
   const InputText = ({ children }) =>(
     <div className='flex-row font-karla font-medium grow mt-6'>
       <Label>{children}</Label>
-      <input id={children} name={children} type="text" className='w-full block mt-2 rounded-lg px-5 py-3 border border-gray-400 text-base text-[var(--Grey900)] focus:outline-none focus:border-[var(--Green600)]'/>
+      <input required id={children} name={children} type="text" className='cursor-pointer w-full block mt-2 rounded-lg px-5 py-3 border border-gray-400 text-base text-[var(--Grey900)] focus:outline-none focus:border-[var(--Green600)]'/>
     </div>
   );
   
   const InputEmail = ({ children }) =>(
     <div className='font-karla font-medium grow mt-6'>
       <Label>{children}</Label>
-      <input id={children} name={children} type="email" className='w-full block mt-2 rounded-lg px-5 py-3 border border-gray-400 text-base text-[var(--Grey900)] focus:outline-none focus:border-[var(--Green600)]'/>
+      <input required id={children} name={children} type="email" className='cursor-pointer w-full block mt-2 rounded-lg px-5 py-3 border border-gray-400 text-base text-[var(--Grey900)] focus:outline-none focus:border-[var(--Green600)]'/>
     </div>
   );
 
@@ -24,34 +25,63 @@ function ContactForm() {
     return (
       <div className='font-karla font-medium grow mt-6'>
         <Label>{children}</Label>
-        <div className='flex flex-row gap-x-5'>
-
-        <label className="w-full block mt-2 rounded-lg px-5 py-3 border border-gray-400 text-base text-[var(--Grey900)] cursor-pointer flex items-center relativep-3 w-full" htmlFor="GeneralEnquiry">
+        <div className='flex flex-col sm:flex-row gap-x-5'>
+        <div className='w-full relative mt-2  h-[50px]'>
           <input
             name={children}
             type="radio"
-            className="peer relative h-5 w-5 appearance-none rounded-full border border-blue-gray-200before:absolute before:top-1/2 before:left-1/2 before:block before:h-4 before:w-4 before:-translate-y-2/4 before:-translate-x-2/4 before:rounded-full before:bg-blue-gray-500"
+            className="peer h-4 w-4 absolute top-1/2 -translate-y-1/2 left-5 appearance-none rounded-full border border-gray-300 checked:border-0 "
             id="GeneralEnquiry"
-          />
-          <span className="relative text-gray-900 opacity-0 top-0 left-0 peer-checked:opacity-100">
-            <img src={`${CheckboxImg}`} alt="Checkbox" />
+            />
+          <label className="w-full h-full absolute rounded-lg border border-gray-400 text-base text-[var(--Grey900)] cursor-pointer flex items-center p-3 peer-checked:border-[var(--Green600)] peer-checked:bg-[var(--Green200)]" htmlFor="GeneralEnquiry"></label>
+          <span className=" absolute text-gray-900 opacity-0 w-4 h-4 peer-checked:opacity-100 top-1/2 -translate-y-1/2 left-5">
+            <img src={`${RadioImg}`} alt="Checkbox" />
           </span>
-          <span>General Enquiry</span>
-        </label>
-
-
-          <label htmlFor='SupportRequest' className='radio-label w-full block mt-2 rounded-lg px-5 py-3 border border-gray-400 text-base text-[var(--Grey900)] cursor-pointer flex items-center relative'>
-            <input id='SupportRequest' name={children} type='radio' className='radio-input opacity-0 absolute' />
-            <span className='custom-radio before:content-[""] before:absolute before:top-1/2 before:transform before:-translate-y-1/2 before:w-4 before:h-4 before:border before:border-gray-400 before:rounded-full'></span>
-            <span className='ml-8'>Support Request</span>
-          </label>
+          <span className=' absolute top-1/2 -translate-y-1/2 left-12'>General Enquiry</span>
+        </div>
+        <div className='w-full relative mt-2 h-[50px]'>
+          <input
+            name={children}
+            type="radio"
+            className="peer h-4 w-4 absolute top-1/2 -translate-y-1/2 left-5 appearance-none rounded-full border border-gray-300 checked:border-0 "
+            id="SupportRequest"
+            />
+          <label className="w-full h-full absolute rounded-lg border border-gray-400 text-base text-[var(--Grey900)] cursor-pointer flex items-center p-3 peer-checked:border-[var(--Green600)] peer-checked:bg-[var(--Green200)]" htmlFor="SupportRequest"></label>
+          <span className=" absolute text-gray-900 opacity-0 w-4 h-4 peer-checked:opacity-100 top-1/2 -translate-y-1/2 left-5">
+            <img src={`${RadioImg}`} alt="Checkbox" />
+          </span>
+          <span className=' absolute top-1/2 -translate-y-1/2 left-12'>Support Request</span>
+        </div>  
         </div>
       </div>
     );
   };
 
+  const InputTextArea = ({ children }) =>(
+    <div className='flex-row font-karla font-medium grow mt-6'>
+      <Label>{children}</Label>
+      <textarea required id={children} className='resize-none w-full h-24 block mt-2 rounded-lg px-5 py-3 border border-gray-400 text-base text-[var(--Grey900)] focus:outline-none focus:border-[var(--Green600)]'/>
+    </div>
+  );
+  
+  const InputCheckbox = ({ children }) =>(
+    <div className='relative font-karla font-medium grow mt-6 text-[var(--Grey900)] text-sm after:content-["*"] after:text-[var(--Green600)] after:ml-1'>
+      <input id={children}  type="checkbox" className='peer appearance-none absolute rounded-sm border border-gray-300 w-4 h-4  top-1/2 -translate-y-1/2 checked:border-0'/>
+      <span className=" absolute text-gray-900 opacity-0 w-4 h-4 peer-checked:opacity-100 top-1/2 -translate-y-1/2 ">
+        <img src={`${CheckboxImg}`} alt="Checkbox" />
+      </span>
+      <label htmlFor={children} className='ml-9 '>I consent to being contacted by the team</label>
+    </div>
+  );
+
+  const InputSubmit = ({ children }) =>(
+    <div className='font-karla font-medium grow mt-6'>
+      <input type="submit" value={ children } className='w-full block rounded-lg bg-[var(--Green600)] text-white h-[50px] active:bg-[var(--Grey900)] cursor-pointer'/>
+    </div>
+  );
+
   return (
-    <div className='bg-[var(--Green200)] w-full h-dvh font-karla flex justify-center items-center'>
+    <div className='bg-[var(--Green200)] w-full h-dvh font-karla flex justify-center items-center px-5'>
       <style>
         {`
           :root {
@@ -62,21 +92,13 @@ function ContactForm() {
           --Grey500: hsl(186, 15%, 59%);
           --Grey900: hsl(187, 24%, 22%);
           }
-
-          .radio-input:checked + .custom-radio::before {
-            background-image: url('${CheckboxImg}');
-            background-repeat: no-repeat;
-            background-position: center;
-            background-size: 1rem;
-            border: 0;
-          }
         `}
       </style>
-      <div className='w-[700px] bg-white rounded-2xl p-10'>
+      <form className='w-[700px] bg-white rounded-2xl p-10'>
         <div className='font-bold text-3xl text-[var(--Grey900)]'>
           Contact Us
         </div>
-        <div className='flex flex-row gap-x-5'>
+        <div className='flex flex-col gap-x-5 sm:flex-row'>
           <InputText>First Name</InputText>
           <InputText>Last Name</InputText>
         </div>
@@ -86,9 +108,17 @@ function ContactForm() {
         <div>
           <InputRadio>Query Type</InputRadio>
         </div>
-
+        <div>
+          <InputTextArea>Message</InputTextArea>
+        </div>
+        <div>
+          <InputCheckbox>Agree</InputCheckbox>
+        </div>
+        <div>
+          <InputSubmit>Submit</InputSubmit>
+        </div>
     
-      </div>
+      </form>
 
 
 
