@@ -10,6 +10,9 @@ const Home = () => {
       <div>
         <Link to="/ContactForm">Contact Form</Link>
       </div>
+      <div>
+        <Link to="/NewsletterForm">Newsletter Form</Link>
+      </div>
     </div>
   );
 };

@@ -7,9 +7,10 @@ export default {
   theme: {  
     extend: {
       fontFamily: {
-        sans: ["Outfit", 'sans-serif'],
-        serif: ["Young Serif", 'serif'],
+        sans:["Outfit", 'sans-serif'],
+        serif:["Young Serif", 'serif'],
         karla:["Karla", 'sans-serif'],
+        roboto:["Roboto", 'sans-serif'],
       },
       colors: {
         'White':'hsl(0, 0%, 100%)',

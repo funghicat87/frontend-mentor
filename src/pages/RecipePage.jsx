@@ -3,7 +3,7 @@ import { preparation, ingredients, instructions, nutrition } from "../constants"
 
 const RecipePage = () => {
   return (
-    <div className='w-full bg-Eggshell flex items-center justify-center md:py-20'>
+    <div className='w-full h-screen bg-Eggshell flex items-center justify-center md:py-20'>
       <div className='bg-White w-[1000px] md:rounded-3xl md:p-12'>
         <img src={omeletteImage} alt="Omelette" className='md:rounded-2xl' />
         <div className='md:p-0 p-12'>
