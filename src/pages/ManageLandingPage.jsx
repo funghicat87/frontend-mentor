@@ -12,38 +12,40 @@ const ManageLandingPage = () => {
         {`
           .frame-container {
             position: relative;
-            width: 500px; /* 可以调整宽度 */
-            height: 300px; /* 可以调整高度 */
+            width:1000px; /* 可以调整宽度 */
+            height: 500px; /* 可以调整高度 */
             background-color: rgba(8, 8, 8, 0.8);
-            margin: 7px;
             Box-sizing: border-box;
+            border-image:  conic-gradient(#737272, #B0B0B0, #4E4D4D, #787878,#B7B7B7, #727272, #5B5B5B, #ADADAD, #575757, #5C5C5C, #C0C0C0, #595959, #737272) 1;
+            border-width: 2px;
           }
           .corner {
             content: '';
             position: absolute;
-            width: 150px; /* 角的宽度 */
-            height: 150px; /* 角的高度 */
+            width: 200px; /* 角的宽度 */
+            height: 200px; /* 角的高度 */
             background-size: cover;
           }
           .upper-left {
-            top: 0;
-            left: 0;
+            top: -9px;
+            left: -9px;
             background-image: url(${UpperLeft});
           }
           .upper-right {
-            top: 0;
-            right: 0;
+            top: -9px;
+            right: -9px;
             background-image: url(${UpperRight});
           }
           .lower-left {
-            bottom: 0;
-            left: 0;
+            bottom: -9px;
+            left: -9px;
             background-image: url(${LowerLeft});
           }
           .lower-right {
-            bottom: 0;
-            right: 0;
+            bottom: -9px;
+            right: -9px;
             background-image: url(${LowerRight});
+
           }
         `}
       </style>
