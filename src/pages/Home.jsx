@@ -13,6 +13,9 @@ const Home = () => {
       <div>
         <Link to="/NewsletterForm">Newsletter Form</Link>
       </div>
+      <div>
+        <Link to="/ManageLandingPage">Manage Landing Page</Link>
+      </div>
     </div>
   );
 };

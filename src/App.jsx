@@ -4,6 +4,7 @@ import Home from './pages/Home';
 import RecipePage from './pages/RecipePage';
 import ContactForm from './pages/ContactForm.jsx';
 import NewsletterForm from './pages/NewsletterForm.jsx';
+import ManageLandingPage from './pages/ManageLandingPage.jsx';
 
 const App = () => {
   return (
@@ -13,6 +14,8 @@ const App = () => {
         <Route path="/RecipePage" element={<RecipePage />} />
         <Route path="/ContactForm" element={<ContactForm />} />
         <Route path="/NewsletterForm" element={<NewsletterForm />} />
+        <Route path="/ManageLandingPage" element={<ManageLandingPage />} />
+
       </Routes>
     </div>
   );
